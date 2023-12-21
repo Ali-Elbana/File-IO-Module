@@ -27,13 +27,15 @@
 
 ## A collection of fuctions written in C++ for easier file operations.
 
-Introduction:
-Welcome to the File I/O Module, a dedicated toolkit crafted to enhance your C++ file handling experience. As a programmer, dealing with file operations can be intricate and time-consuming. This module aims to alleviate those challenges by providing a set of functions that streamline common file tasks, allowing you to focus on your application's core logic.
+### Introduction:
 
-Description:
+Welcome to the File I/O Module, a dedicated module crafted to enhance your C++ file handling experience. As a programmer, dealing with file operations can be intricate and time-consuming. This module aims to alleviate those challenges by providing a set of functions that streamline common file tasks, allowing you to focus on your application's core logic.
+
+### Description:
+
 The File I/O Module is a comprehensive solution designed to simplify File I/O operations in C++. Whether you're a beginner or an experienced developer, this module offers a range of functions that abstract away the complexities of reading, writing, and manipulating files.
 
-Key Features:
+### Key Features:
 
 * **Effortless File Handling:** Simplify file operations with intuitive functions.
 * **Robust Error Handling:** Ensure smooth execution with comprehensive error-handling mechanisms.
@@ -63,22 +65,19 @@ Empower your C++ projects with the File I/O Module. Whether you're building a sm
 
 ## Installation and Usage:
 
-You can access the File I/O Module directly on GitHub by browsing the repository's files. The notes are organized in subdirectories and files based on different components of the STL. You can simply navigate through the directories to find the topics you are interested in.
-
-If you prefer to have a local copy of the notes, you can clone the repository to your machine.
+You can clone the repository to your machine.
 
 1. Clone the repository to your local machine, using the following command:
 
 ```BASH
 git clone https://github.com/Ali-Elbana/File-IO-Module.git
 ```
-2. Open the notes in your preferred markdown viewer or [Obsidian](https://obsidian.md/download).
-
-3. Navigate through the sections and explore examples and explanations.
+2. 
+3. 
 
 ## Credits:
 
-`The credits of most of the images used in these notes are going to:`
+`The credits of  are going to:`
 
 
 ## Contribution Guidelines:
