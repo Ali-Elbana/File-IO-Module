@@ -24,7 +24,7 @@
   
 
 </div>
-
+----
 ## A collection of fuctions written in C++ for easier file operations.
 
 ### Introduction:
