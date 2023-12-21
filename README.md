@@ -3,6 +3,8 @@
 
 # **File I/O Module: Simplifying C++ File Operations**
 
+---
+
 [![GitHub stars](https://img.shields.io/github/stars/Ali-Elbana/File-IO-Module?style=social)](https://github.com/Ali-Elbana/File-IO-Module/stargazers) 
 [![GitHub forks](https://img.shields.io/github/forks/Ali-Elbana/File-IO-Module?style=social)](https://github.com/Ali-Elbana/File-IO-Module/network/members) 
 [![GitHub watchers](https://img.shields.io/github/watchers/Ali-Elbana/File-IO-Module?style=social)](https://github.com/Ali-Elbana/File-IO-Module/watchers)
@@ -18,6 +20,9 @@
 
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Ali-Elbana/File-IO-Module)](https://github.com/Ali-Elbana/File-IO-Module/pulls)
 ![GitHub merged PRs](https://img.shields.io/github/issues-pr-closed/Ali-Elbana/File-IO-Module?style=flat-square)
+
+---
+
 </div>
 
 <div>
