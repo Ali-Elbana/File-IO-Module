@@ -46,12 +46,6 @@ void create_bin_file( const std::string &filename )
     else
     {
 
-        // Example data to write to the binary file
-        int numbers[] = {1, 2, 3, 4, 5} ;
-
-        // Write the data to the file
-        file.write( reinterpret_cast<const char*>(numbers), sizeof(numbers) ) ;
-
         // Close the file
         file.close() ;
 
@@ -64,8 +58,25 @@ void create_bin_file( const std::string &filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void delete_file( const std::string &filename ) 
+{
 
+    // Try to delete the file
+    int result = remove( filename.c_str() ) ;
 
+    // Check the result
+    if( result == 0 ) 
+    {
+        // Print a success message
+        std::cout << "File '" << filename << "' deleted.\n";
+    }
+    else 
+    {
+        // Print an error message
+        std::cerr << "Error: Could not delete file '" << filename << "'\n";
+    }
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
