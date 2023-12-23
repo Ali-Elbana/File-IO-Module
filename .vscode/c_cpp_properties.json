@@ -11,7 +11,8 @@
       "intelliSenseMode": "windows-gcc-x64",
       "compilerArgs": [
         ""
-      ]
+      ],
+      "configurationProvider": "ms-vscode.makefile-tools"
     }
   ],
   "version": 4
