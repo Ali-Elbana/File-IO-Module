@@ -115,8 +115,31 @@ std::ifstream open_txt_file_read( const std::string &filename )
     {
         std::cout << "Text file '" << filename << "' opened in read mode successfully.\n" ;
     }
-    
+
     return fin ;
+
+}
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+std::ofstream open_txt_file_write( const std::string &filename )
+{
+
+    std::ofstream fout ;
+
+    fout.open( filename, std::ios::out ) ;
+
+    if( fout.is_open() != true ) 
+    {
+        std::cerr << "Error: Could not open file " << filename << "\n" ;
+    }
+    else
+    {
+        std::cout << "Text file '" << filename << "' opened in write mode successfully.\n" ;
+    }
+
+    return fout ;
 
 }
 

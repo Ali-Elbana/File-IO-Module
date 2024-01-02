@@ -31,15 +31,15 @@ void rename_file( const std::string &oldName, const std::string &newName ) ;
 
 /*******************************************************************************************/
 
-// 5-Function to open txt file in read state
+// 5-Function to open txt file in read mode
 
 std::ifstream open_txt_file_read( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
-// 6-Function to open txt file in write state
+// 6-Function to open txt file in write mode
 
-
+std::ofstream open_txt_file_write( const std::string &filename ) ;
 
 /*******************************************************************************************/
 

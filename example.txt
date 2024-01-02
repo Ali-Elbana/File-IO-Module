@@ -1,3 +1,2 @@
-Peace upon, world!!
-
-This is a dumy file.
+Hello, this is a test.
+Writing to a text file using C++.

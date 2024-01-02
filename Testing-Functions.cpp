@@ -12,7 +12,8 @@
 #define CREATE_BIN_FILE     STOP
 #define DELETE_FILE         STOP
 #define RENAME_FILE         STOP
-#define OPEN_TXT_FILE_RD    RUN
+#define OPEN_TXT_FILE_RD    STOP
+#define OPEN_TXT_FILE_WT    RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -119,7 +120,7 @@
 
         filename += ".txt" ;
 
-        // Open the file using the open_file_read function
+        // Open the file using the open_txt_file_read function
         std::ifstream fileStream = open_txt_file_read( filename ) ;
 
         // Read and print the content line by line
@@ -129,6 +130,42 @@
         {
             std::cout << line << std::endl;
         }
+
+        fileStream.close( ) ;
+
+        return 0 ;
+
+    }
+
+#endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if OPEN_TXT_FILE_WT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::cout << "Enter the name of the file to write: " ;
+        std::string filename ;
+        std::cin >> filename ;
+
+        filename += ".txt" ;
+
+        // Open the file using the open_file_write function
+        std::ofstream fileStream = open_txt_file_write( filename ) ;
+
+        // Write some text to the file
+        fileStream << "Hello, this is a test.\n";
+        fileStream << "Writing to a text file using C++.\n";
+
+        std::cout << "Text written to the " << filename << " file.\n";
+
+        fileStream.close( ) ;
 
         return 0 ;
 
