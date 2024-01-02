@@ -100,6 +100,25 @@ void rename_file( const std::string &oldName, const std::string &newName )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::ifstream open_txt_file_read( const std::string &filename )
+{
+
+    std::ifstream fin ;
+
+    fin.open( filename, std::ios::in ) ;
+
+    if( fin.is_open() != true ) 
+    {
+        std::cerr << "Error: Could not open file " << filename << "\n" ;
+    }
+    else
+    {
+        std::cout << "Text file '" << filename << "' opened in read mode successfully.\n" ;
+    }
+    
+    return fin ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
