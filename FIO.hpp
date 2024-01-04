@@ -32,21 +32,36 @@ void rename_file( const std::string &oldName, const std::string &newName ) ;
 /*******************************************************************************************/
 
 // 5-Function to open txt file in read mode
-
 std::ifstream open_txt_file_read( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
 // 6-Function to open txt file in write mode
-
 std::ofstream open_txt_file_write( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
+// 7-Function to open bin file in read mode
+std::ifstream open_bin_file_read( const std::string &filename ) ;
+
+
+/*******************************************************************************************/
+
+// 8-Function to open bin file in write mode
+
+
+
+/*******************************************************************************************/
+
+// 9-Function to close any type of file
+
 
 
 /*******************************************************************************************/
 
 
+
+
+/*******************************************************************************************/
 
 #endif
