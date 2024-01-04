@@ -67,7 +67,7 @@ std::string read_firstLine_txtFile( const std::string &filename ) ;
 /*******************************************************************************************/
 
 // 12-Read the last line of a text file
-
+std::string read_lastLine_txtFile( const std::string &filename ) ;
 
 /*******************************************************************************************/
 

@@ -305,6 +305,72 @@ std::string read_firstLine_txtFile( const std::string &filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::string read_lastLine_txtFile( const std::string &filename )
+{
+
+    // Create an input file stream object
+    std::ifstream fin( filename ) ;
+
+    // Declare a string to store the line
+    std::string line ;
+
+    // Check if the file is open
+    if( fin.is_open() == true )
+    {
+
+        // Seek to the end of the file
+        fin.seekg( 0, std::ios::end ) ;
+
+        // Loop backwards until a newline is found or the beginning of the file is reached
+        while( fin )
+        {
+
+            // Move one character back
+            fin.seekg( -1, std::ios::cur ) ;
+
+            // Get the current character
+            char ch = fin.peek() ;
+
+            // If the character is a newline, break the loop
+            if( ch == '\n' )
+            {
+                break ;
+            }
+            else
+            {
+                // Insert the character at the beginning of the line
+                line.insert( 0, 1, ch ) ;
+            }
+
+            // If the beginning of the file is reached, move to the first position
+            if( fin.tellg() == 0 )
+            {
+
+                fin.seekg( 0 ) ;
+
+                break ;
+                
+            }
+            else
+            {
+                // Continue
+            }
+
+        }
+
+        // Close the file
+        fin.close() ;
+
+    }
+    else
+    {
+        // Return an empty string if the file cannot be opened
+        line = "" ;
+    }
+
+    return line ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
