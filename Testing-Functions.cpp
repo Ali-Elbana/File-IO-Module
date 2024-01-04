@@ -189,7 +189,7 @@
         std::ofstream fout ;
 
         // Open the file in binary write mode
-        fout.open("data.bin", std::ios::out | std::ios::binary) ;
+        fout.open( filename, std::ios::out | std::ios::binary ) ;
 
         // Check if the file is open
         if( fout.is_open() != true )
