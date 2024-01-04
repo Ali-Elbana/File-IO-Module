@@ -1,0 +1,3 @@
+Peace upon, world!!
+
+This is a testing file for file I/O operations in C++.

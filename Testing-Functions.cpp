@@ -17,7 +17,8 @@
 #define OPEN_BIN_FILE_RD    STOP
 #define OPEN_BIN_FILE_WT    STOP
 #define CLEAR_FILE          STOP
-#define CHECK_FILE_STATUS   RUN
+#define CHECK_FILE_STATUS   STOP
+#define RD_FLINE_FILETXT    RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -327,6 +328,30 @@
         std::string txt_filename {"example.txt"}    ;
 
         check_file_status( txt_filename ) ;
+
+        return 0 ;
+
+    }
+
+#endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if RD_FLINE_FILETXT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string txt_filename    {"example.txt"} ;
+        std::string fContent        {""}            ;
+
+        fContent = read_firstLine_txtFile( txt_filename ) ;
+
+        std::cout<< "The content of the file '" <<txt_filename <<"' :\n" <<fContent <<'\n' ;
 
         return 0 ;
 
