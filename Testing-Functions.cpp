@@ -19,7 +19,8 @@
 #define CLEAR_FILE          STOP
 #define CHECK_FILE_STATUS   STOP
 #define RD_FLINE_FILETXT    STOP
-#define RD_LLINE_FILETXT    RUN
+#define RD_LLINE_FILETXT    STOP
+#define RD_ENTIRE_FILETXT   RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -377,6 +378,30 @@
         fContent = read_lastLine_txtFile( txt_filename ) ;
 
         std::cout<< "The last line in the file '" <<txt_filename <<"' is:\n" <<fContent <<'\n' ;
+
+        return 0 ;
+
+    }
+
+#endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if RD_ENTIRE_FILETXT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string txt_filename    {"example.txt"} ;
+        std::string fContent        {""}            ;
+
+        fContent = read_entire_txtFile( txt_filename ) ;
+
+        std::cout<< "The content of the file '" <<txt_filename <<"' is:\n" <<fContent <<'\n' ;
 
         return 0 ;
 

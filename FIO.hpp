@@ -8,6 +8,7 @@
 #include <fstream>
 #include <filesystem>
 #include <cstdio>  // for remove
+#include <sstream>
 
 /*******************************************************************************************/
 
@@ -72,7 +73,7 @@ std::string read_lastLine_txtFile( const std::string &filename ) ;
 /*******************************************************************************************/
 
 // 13-Read the entire file 
-
+std::string read_entire_txtFile( const std::string &filename ) ;
 
 /*******************************************************************************************/
 

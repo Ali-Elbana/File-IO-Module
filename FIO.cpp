@@ -349,7 +349,7 @@ std::string read_lastLine_txtFile( const std::string &filename )
                 fin.seekg( 0 ) ;
 
                 break ;
-                
+
             }
             else
             {
@@ -375,6 +375,33 @@ std::string read_lastLine_txtFile( const std::string &filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::string read_entire_txtFile( const std::string &filename ) 
+{
+
+    // Open the file in binary mode and seek to the end
+    std::ifstream fin( filename ) ;
+
+    std::stringstream buffer ;
+
+    // Check if the file is open
+    if( fin.is_open() == true )
+    {
+
+        buffer << fin.rdbuf() ;
+
+        // Close the file
+        fin.close() ;
+
+    }
+    else
+    {
+        // Return an empty string if the file cannot be opened
+        buffer.str() = "" ;
+    }
+
+    return buffer.str() ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
