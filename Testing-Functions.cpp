@@ -16,7 +16,8 @@
 #define OPEN_TXT_FILE_WT    STOP
 #define OPEN_BIN_FILE_RD    STOP
 #define OPEN_BIN_FILE_WT    STOP
-#define CLEAR_FILE          RUN
+#define CLEAR_FILE          STOP
+#define CHECK_FILE_STATUS   RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -305,6 +306,27 @@
         std::ofstream bfout = open_bin_file_write( bin_filename ) ;
 
         clear_file( bin_filename ) ;
+
+        return 0 ;
+
+    }
+
+#endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if CHECK_FILE_STATUS == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string txt_filename {"example.txt"}    ;
+
+        check_file_status( txt_filename ) ;
 
         return 0 ;
 

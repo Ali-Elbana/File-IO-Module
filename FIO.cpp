@@ -197,7 +197,7 @@ void clear_file( const std::string & filename )
 
     // Open the file with truncation mode
     std::ofstream ofs( filename, std::ofstream::out | std::ofstream::trunc ) ;
-    
+
     // Close the file
     ofs.close() ;
 
@@ -206,6 +206,68 @@ void clear_file( const std::string & filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void check_file_status( const std::string &filename ) 
+{
+
+    std::ifstream file( filename ) ;
+    
+    if( file ) 
+    {
+
+        if( file.is_open() == true ) 
+        {
+            std::cout << "File is open.\n" ;
+        } 
+        else 
+        {
+            std::cout << "File is closed.\n" ;
+        }
+
+        if( file.good() == true ) 
+        {
+            std::cout << "File '" << filename << "' is in a good state (no errors).\n" ;
+        } 
+        else 
+        {
+            // Do nothing
+        }
+
+        if( file.fail() == true ) 
+        {
+            std::cerr << "Non-fatal failure in file '" << filename << "' (a logical error on I/O operation).\n" ;
+        }
+        else 
+        {
+            // Do nothing
+        }
+
+        if( file.bad() == true ) 
+        {
+            std::cerr << "Fatal failure in file '" << filename << "' (reading/writing error on I/O operation).\n" ;        
+        }
+        else 
+        {
+            // Do nothing
+        }
+
+        if( file.eof() == true ) 
+        {
+            std::cout << "End-of-file reached in file '" << filename << "'.\n" ;        
+        }
+        else 
+        {
+            // Do nothing
+        }
+        
+    } 
+    else 
+    {
+        std::cout << "File does not exist.\n" ;
+    }
+    
+    file.close() ;
+
+}
 
 
 /*******************************************************************************************/
