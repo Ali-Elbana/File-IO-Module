@@ -51,14 +51,11 @@ std::ofstream open_bin_file_write( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
-// 9-Function to close any type of file
-
-
-/*******************************************************************************************/
-
-
-
+// 9-Function to clear the content of any type of files
+void clear_file( const std::string & filename ) ;
 
 /*******************************************************************************************/
+
+
 
 #endif

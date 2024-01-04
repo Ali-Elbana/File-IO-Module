@@ -15,7 +15,8 @@
 #define OPEN_TXT_FILE_RD    STOP
 #define OPEN_TXT_FILE_WT    STOP
 #define OPEN_BIN_FILE_RD    STOP
-#define OPEN_BIN_FILE_WT    RUN
+#define OPEN_BIN_FILE_WT    STOP
+#define CLEAR_FILE          RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -276,6 +277,34 @@
         std::cout << "z = " << z << "\n" ;
 
         fileStream.close( ) ;
+
+        return 0 ;
+
+    }
+
+#endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if CLEAR_FILE == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string txt_filename {"example.txt"}    ;
+        std::string bin_filename {"test.bin"}       ;
+
+        std::ofstream tfout = open_txt_file_write( txt_filename ) ;
+
+        clear_file( txt_filename ) ;
+
+        std::ofstream bfout = open_bin_file_write( bin_filename ) ;
+
+        clear_file( bin_filename ) ;
 
         return 0 ;
 
