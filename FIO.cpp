@@ -159,10 +159,33 @@ std::ifstream open_bin_file_read( const std::string &filename )
     }
     else
     {
-        std::cout << "Text file '" << filename << "' opened in read mode successfully.\n" ;
+        std::cout << "Bin file '" << filename << "' opened in read mode successfully.\n" ;
     }
 
     return fin ;
+
+}
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+std::ofstream open_bin_file_write( const std::string &filename )
+{
+
+    std::ofstream fout ;
+
+    fout.open( filename, std::ios::out | std::ios::binary ) ;
+
+    if( fout.is_open() != true ) 
+    {
+        std::cerr << "Error: Could not open file " << filename << "\n" ;
+    }
+    else
+    {
+        std::cout << "Bin file '" << filename << "' opened in write mode successfully.\n" ;
+    }
+
+    return fout ;
 
 }
 

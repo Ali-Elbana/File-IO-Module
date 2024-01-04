@@ -14,7 +14,8 @@
 #define RENAME_FILE         STOP
 #define OPEN_TXT_FILE_RD    STOP
 #define OPEN_TXT_FILE_WT    STOP
-#define OPEN_BIN_FILE_RD    RUN
+#define OPEN_BIN_FILE_RD    STOP
+#define OPEN_BIN_FILE_WT    RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -196,6 +197,57 @@
         {
             std::cerr << "Cannot open file!" << std::endl ;
         }
+
+        // Write some data to the file
+        int     x {42}    ;
+        double  y {3.14}  ;
+        char    z {'A'}   ;
+
+        fout.write( reinterpret_cast<const char*>(&x), sizeof(x) ) ;
+        fout.write( reinterpret_cast<const char*>(&y), sizeof(y) ) ;
+        fout.write( reinterpret_cast<const char*>(&z), sizeof(z) ) ;
+
+        // Close the file
+        fout.close();
+
+        // Open the file using the open_bin_file_read function
+        std::ifstream fileStream = open_bin_file_read( filename ) ;
+
+        // Read the data from the file
+        fileStream.read( reinterpret_cast<char*>(&x), sizeof(x) ) ;
+        fileStream.read( reinterpret_cast<char*>(&y), sizeof(y) ) ;
+        fileStream.read( reinterpret_cast<char*>(&z), sizeof(z) ) ;
+
+        // Print the data to the standard output
+        std::cout << "The data read from the file is: \n" ;
+        std::cout << "x = " << x << "\n" ;
+        std::cout << "y = " << y << "\n" ;
+        std::cout << "z = " << z << "\n" ;
+
+        fileStream.close( ) ;
+
+        return 0 ;
+
+    }
+
+#endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if OPEN_BIN_FILE_WT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename {"test.bin"} ;
+
+        create_bin_file( filename ) ;
+
+        std::ofstream fout = open_bin_file_write( filename ) ;
 
         // Write some data to the file
         int     x {42}    ;
