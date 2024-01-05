@@ -23,7 +23,9 @@
 #define CP_FILETXT          STOP
 #define CP_FILEBIN          STOP
 #define CNT_LINES           STOP
-#define FILE_EXISTANCE      RUN
+#define FILE_EXISTANCE      STOP
+#define WT_OBJ_FILEBIN      STOP
+#define AD_OBJ_FILEBIN      RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -576,10 +578,54 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if WT_OBJ_FILEBIN == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "test2.bin" ;
+
+        int     x   {20} ;
+        char    y  {'A'} ;
+
+        write_data_binFile( filename, x ) ;
+
+        write_data_binFile( filename, y ) ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if AD_OBJ_FILEBIN == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "test2.bin" ;
+
+        int     x  {30}  ;
+        char    y  {'B'} ;
+
+        append_data_binFile( filename, x ) ;
+
+        append_data_binFile( filename, y ) ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/

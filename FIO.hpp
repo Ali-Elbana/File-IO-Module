@@ -5,6 +5,7 @@
 #define FIO_H
 
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <filesystem>
 #include <cstdio>  // for remove
@@ -102,11 +103,49 @@ bool does_file_exist( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
-// 19-Write data in binary mode
+// 19-Write any data in binary mode
+template <typename T>
+void write_data_binFile( const std::string &filename, T &x ) 
+{
+    
+    std::ofstream file( filename, std::ios::out | std::ios::binary ) ; 
 
+    if( file.is_open() == true )
+    {
+        // write an obj as bytes
+        file.write( reinterpret_cast<char*>(&x), sizeof(x) ) ; 
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file '" << filename << "'.\n" ;
+    }
+
+    file.close();
+    
+}
 
 /*******************************************************************************************/
 
+// 20-Append any data in binary mode
+template <typename T>
+void append_data_binFile( const std::string &filename, T &x ) 
+{
+    
+    std::ofstream file( filename, std::ios::out | std::ios::binary | std::ios::app ) ; 
+
+    if( file.is_open() == true )
+    {
+        // write an obj as bytes
+        file.write( reinterpret_cast<char*>(&x), sizeof(x) ) ; 
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file '" << filename << "'.\n" ;
+    }
+
+    file.close();
+    
+}
 
 /*******************************************************************************************/
 
@@ -153,7 +192,7 @@ bool does_file_exist( const std::string &filename ) ;
 
     Write these functions:
     1-Check if a file exists.✅
-    2-Write data in binary mode.
+    2-Write data in binary mode.✅
     3-Write data in chunks in binary mode.
     4-Seek to a specific position in a txt file.
     5-Add a line or sort of lines after a specific position in a txt file.
