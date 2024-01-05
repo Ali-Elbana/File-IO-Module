@@ -430,7 +430,26 @@ void write_to_txtFile( const std::string &filename, const std::string &content )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void append_to_txtFile( const std::string &filename, const std::string &content )
+{
 
+    std::ofstream file( filename, std::ios::app ) ;
+
+    if( file.is_open() == true ) 
+    {
+        // Write the content to the file
+        file << content ;  
+
+        std::cout << "Content written to file: " << filename << '\n' ;
+    } 
+    else 
+    {
+        std::cerr << "Error: Could not open file " << filename << " for writing.\n";
+    }
+
+    file.close() ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

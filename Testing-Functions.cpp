@@ -18,7 +18,8 @@
 #define RD_FLINE_FILETXT    STOP
 #define RD_LLINE_FILETXT    STOP
 #define RD_ENTIRE_FILETXT   STOP
-#define WT_TO_FILETXT       RUN
+#define WT_TO_FILETXT       STOP
+#define AD_TO_FILETXT       RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -431,6 +432,28 @@
     }
 
 #endif
+
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+#if AD_TO_FILETXT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string txt_filename {"example.txt"} ;
+
+        append_to_txtFile( txt_filename, "\nI'm now developing a module for file I/O operations.\n" ) ;
+
+        return 0 ;
+
+    }
+
+#endif
+
 
 /*******************************************************************************************/
 /*******************************************************************************************/
