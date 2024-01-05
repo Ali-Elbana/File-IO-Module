@@ -1,4 +1,4 @@
 .PHONY: Build
 
 Build:
-	g++ Testing-Functions.cpp FIO.cpp
+	g++ --std=c++17 Testing-Functions.cpp FIO.cpp

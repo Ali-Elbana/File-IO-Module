@@ -22,7 +22,8 @@
 #define AD_TO_FILETXT       STOP
 #define CP_FILETXT          STOP
 #define CP_FILEBIN          STOP
-#define CNT_LINES           RUN
+#define CNT_LINES           STOP
+#define FILE_EXISTANCE      RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -547,6 +548,30 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if FILE_EXISTANCE == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "FO.cpp" ;
+
+        if( does_file_exist( filename ) == true )
+        {
+            std::cout <<"\nThe file '" << filename << "' already exist.\n" ;
+        }
+        else
+        {
+            std::cout <<"\nThe file '" << filename << "' doesn't exist.\n" ;
+        }
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
