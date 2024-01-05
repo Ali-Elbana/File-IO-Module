@@ -87,7 +87,8 @@ void append_to_txtFile( const std::string &filename, const std::string &content 
 
 /*******************************************************************************************/
 
-
+// 16-Copy the content of one txt file to another txt file
+void copy_file( const std::string &sourceFilename, const std::string &destinationFilename ) ;
 
 /*******************************************************************************************/
 
@@ -106,8 +107,8 @@ void append_to_txtFile( const std::string &filename, const std::string &content 
 
     Write these functions:
     1-Write on a txt file. ✅
-    2-Append to a txt file.
-    3-Copy the contents of one file (txt/bin) to another.
+    2-Append to a txt file. ✅
+    3-Copy the content of one file (txt/bin) to another. ✅
     4-Count the number of lines of a txt file.
     5-Seek to a specific position in a txt file.
     6-Add a line or sort of lines after a specific position in a txt file.
