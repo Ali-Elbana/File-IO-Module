@@ -486,6 +486,38 @@ void copy_file( const std::string &sourceFilename, const std::string &destinatio
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+int count_fileLines( const std::string &filename ) 
+{
+
+    std::ifstream file( filename ) ;
+
+    int lineCount {0} ;
+
+    if( file.is_open() == true ) 
+    {
+        std::string line ;
+
+        while( std::getline(file, line) ) 
+        {
+            // For each line read, increment the line count
+            lineCount++ ;
+        }
+
+        file.close() ;
+
+    } 
+    else 
+    {
+
+        lineCount = -1 ;
+
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+
+    }
+
+    return lineCount ;
+    
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

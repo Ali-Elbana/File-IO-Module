@@ -92,29 +92,29 @@ void copy_file( const std::string &sourceFilename, const std::string &destinatio
 
 /*******************************************************************************************/
 
+// 17-Count the number of lines in a file
+int count_fileLines( const std::string &filename ) ;
+
+/*******************************************************************************************/
 
 
 /*******************************************************************************************/
 
 
-/*******************************************************************************************/
-
-
 
 /*******************************************************************************************/
 
-/* TO_DO: 
+/* TO_DO: ✅
 
     Write these functions:
-    1-Write on a txt file. ✅
-    2-Append to a txt file. ✅
-    3-Copy the content of one file (txt/bin) to another. ✅
-    4-Count the number of lines of a txt file.
-    5-Seek to a specific position in a txt file.
-    6-Add a line or sort of lines after a specific position in a txt file.
-    7-Search for a specific word or a line in a txt file.
-    8-Delete a specific word or a line in a txt file.
-    9-Replace a specific word or a line in a txt file.
+    1-Check if a file exists.
+    2-Write data in binary mode.
+    3-Write data in chunks in binary mode.
+    4-Seek to a specific position in a txt file.
+    5-Add a line or sort of lines after a specific position in a txt file.
+    6-Search for a specific word or a line in a txt file.
+    7-Delete a specific word or a line in a txt file.
+    8-Replace a specific word or a line in a txt file.
 
 */
 
