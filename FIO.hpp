@@ -185,7 +185,7 @@ T read_data_binFile( const std::string& filename, int currentPosition )
 
 /*******************************************************************************************/
 
-// 22-Write data in chunks in binary mode
+// 22-Write data in chunks in bin file
 template <typename T>
 void write_chunck_binFile( const std::string& filename, T *data, int size, int chunk_size ) 
 {
@@ -218,9 +218,39 @@ void write_chunck_binFile( const std::string& filename, T *data, int size, int c
 
 }
 
-
 /*******************************************************************************************/
 
+// 23-Read data in chunks from bin file
+template <typename T>
+void read_chunck_binFile( const std::string& filename, T* data, int size, int chunk_size ) 
+{
+    // Declare an input file stream object with the binary flag
+    std::ifstream file( filename, std::ios::binary | std::ios::in ) ; 
+
+    // Check if the file was successfully opened
+    if( file.is_open() == true ) 
+    {
+        // Loop through the file in chunks
+        for( int i = 0; i < size; i += chunk_size )
+        {
+            // Set the read position to the current chunk
+            file.seekg( i * sizeof(T) ) ;
+
+            // Read the chunk from the file
+            file.read( reinterpret_cast<char*>(data + i), chunk_size * sizeof(T) ) ;
+        }
+
+        // Close the file
+        file.close() ;
+
+    }
+    else 
+    {
+        // Handle the error
+        std::cerr << "Could not open the file\n" ;
+    }
+
+}
 
 /*******************************************************************************************/
 

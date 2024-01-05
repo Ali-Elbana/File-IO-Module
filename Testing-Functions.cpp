@@ -27,7 +27,8 @@
 #define WT_OBJ_FILEBIN      STOP
 #define AD_OBJ_FILEBIN      STOP
 #define RD_OBJ_FILEBIN      STOP
-#define WT_CHUNCK_FILEBIN   RUN
+#define WT_CHUNCK_FILEBIN   STOP
+#define RD_CHUNCK_FILEBIN   RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -696,6 +697,43 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RD_CHUNCK_FILEBIN == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        // declare an array of double values
+        double data[5]; 
+
+        // declare the size of the array
+        int size = 5; 
+
+        // declare the size of each chunk
+        int chunk_size = 2; 
+
+        // declare the file name
+        std::string filename = "test2.bin" ; 
+
+        // call the function template with double type and the variables as arguments
+        read_chunck_binFile<double>( filename, data, size, chunk_size ) ;
+
+        // print the data to the console
+        std::cout << "\nThe data read from the file in chunks of size " << chunk_size << " are: \n" ;
+        for( int i = 0; i < size; i++ )
+        {
+            std::cout << data[i] << " " ;
+        }
+
+        std::cout << '\n' ;
+        
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
