@@ -128,7 +128,7 @@ void write_data_binFile( const std::string &filename, T &x )
 
 // 20-Append any data in binary mode
 template <typename T>
-void append_data_binFile( const std::string &filename, T &x ) 
+void append_data_binFile( const std::string &filename, T &data ) 
 {
     
     std::ofstream file( filename, std::ios::out | std::ios::binary | std::ios::app ) ; 
@@ -136,7 +136,7 @@ void append_data_binFile( const std::string &filename, T &x )
     if( file.is_open() == true )
     {
         // write an obj as bytes
-        file.write( reinterpret_cast<char*>(&x), sizeof(x) ) ; 
+        file.write( reinterpret_cast<char*>(&data), sizeof(data) ) ; 
     }
     else
     {
@@ -149,6 +149,39 @@ void append_data_binFile( const std::string &filename, T &x )
 
 /*******************************************************************************************/
 
+// 21-Read any data from a bin file
+template <typename T>
+T read_data_binFile( const std::string& filename, int currentPosition ) 
+{
+
+    T data ;
+
+    // Declare an input file stream object
+    std::ifstream file( filename, std::ios::binary | std::ios::in ) ; 
+
+    // Check if the file was successfully opened
+    if( file.is_open() == true ) 
+    {
+
+        // Set the file pointer to the specified position
+        file.seekg( currentPosition ) ;
+
+        // Read the int value from the file
+        file.read( reinterpret_cast<char*>(&data), sizeof(data) ) ;
+
+        // Close the file
+        file.close() ;
+
+    }
+    else 
+    {
+        // Handle the error
+        std::cerr << "Could not open the file\n" ;
+    }
+
+    return data ;
+
+}
 
 /*******************************************************************************************/
 

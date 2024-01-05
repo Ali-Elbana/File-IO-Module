@@ -25,7 +25,8 @@
 #define CNT_LINES           STOP
 #define FILE_EXISTANCE      STOP
 #define WT_OBJ_FILEBIN      STOP
-#define AD_OBJ_FILEBIN      RUN
+#define AD_OBJ_FILEBIN      STOP
+#define RD_OBJ_FILEBIN      RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -630,6 +631,31 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RD_OBJ_FILEBIN == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "test2.bin" ;
+
+        int offset {0} ;
+        
+        char readChar = read_data_binFile<char>( filename, offset ) ;
+
+        offset += sizeof( char ) ;
+
+        int readInt = read_data_binFile<int>( filename, offset ) ;
+
+        std::cout<< "\nThe readChar = " << readChar << "\nThe readInt = " << readInt << '\n' ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
