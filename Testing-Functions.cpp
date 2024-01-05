@@ -1,7 +1,4 @@
 
-#include <iostream>
-#include <fstream>
-#include <filesystem>
 
 #include "FIO.hpp"
 
@@ -20,7 +17,8 @@
 #define CHECK_FILE_STATUS   STOP
 #define RD_FLINE_FILETXT    STOP
 #define RD_LLINE_FILETXT    STOP
-#define RD_ENTIRE_FILETXT   RUN
+#define RD_ENTIRE_FILETXT   STOP
+#define WT_TO_FILETXT       RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -412,8 +410,27 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if WT_TO_FILETXT == RUN
 
+    int main( void ) 
+    {
 
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string txt_filename1    {"example.txt"}    ;
+        std::string txt_filename2    {"example2.txt"}   ;
+        std::string fContent        {""}                ;
+
+        fContent = read_entire_txtFile( txt_filename1 ) ;
+
+        write_to_txtFile( txt_filename2, fContent ) ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/

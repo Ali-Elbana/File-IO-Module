@@ -77,7 +77,8 @@ std::string read_entire_txtFile( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
-
+// 14-Write on a txt file
+void write_to_txtFile( const std::string &filename, const std::string &content ) ;
 
 /*******************************************************************************************/
 
@@ -93,7 +94,7 @@ std::string read_entire_txtFile( const std::string &filename ) ;
     7-Search for a specific word or a line in a txt file.
     8-Delete a specific word or a line in a txt file.
     9-Replace a specific word or a line in a txt file.
-    
+
 */
 
 /*******************************************************************************************/
