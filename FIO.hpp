@@ -185,6 +185,39 @@ T read_data_binFile( const std::string& filename, int currentPosition )
 
 /*******************************************************************************************/
 
+// 22-Write data in chunks in binary mode
+template <typename T>
+void write_chunck_binFile( const std::string& filename, T *data, int size, int chunk_size ) 
+{
+    
+    // Declare an output file stream object with the binary flag
+    std::ofstream file( filename, std::ios::binary | std::ios::out ) ; 
+
+    // Check if the file was successfully opened
+    if( file.is_open() == true ) 
+    {
+        // Loop through the data in chunks
+        for( int i = 0; i < size; i += chunk_size )
+        {
+            // Calculate the actual size of the current chunk
+            int actual_size = std::min( chunk_size, size - i ) ;
+
+            // Write the chunk to the file
+            file.write( reinterpret_cast<char*>(data + i), actual_size * sizeof(T) ) ;
+        }
+
+        // Close the file
+        file.close() ;
+
+    }
+    else 
+    {
+        // Handle the error
+        std::cerr << "Could not open the file\n" ;
+    }
+
+}
+
 
 /*******************************************************************************************/
 
@@ -226,7 +259,7 @@ T read_data_binFile( const std::string& filename, int currentPosition )
     Write these functions:
     1-Check if a file exists.✅
     2-Write data in binary mode.✅
-    3-Write data in chunks in binary mode.
+    3-Write data in chunks in binary mode.✅
     4-Seek to a specific position in a txt file.
     5-Add a line or sort of lines after a specific position in a txt file.
     6-Search for a specific word or a line in a txt file.

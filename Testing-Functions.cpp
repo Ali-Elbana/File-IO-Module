@@ -26,7 +26,8 @@
 #define FILE_EXISTANCE      STOP
 #define WT_OBJ_FILEBIN      STOP
 #define AD_OBJ_FILEBIN      STOP
-#define RD_OBJ_FILEBIN      RUN
+#define RD_OBJ_FILEBIN      STOP
+#define WT_CHUNCK_FILEBIN   RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -660,6 +661,37 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if WT_CHUNCK_FILEBIN == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        // declare an array of double values
+        double data[] = {1.2, 3.4, 5.6, 7.8, 9.0} ; 
+
+        // declare the size of the array
+        int size = 5 ; 
+
+        // declare the size of each chunk
+        int chunk_size = 2 ; 
+
+        // declare the file name
+        std::string filename = "test2.bin" ; 
+
+        // call the function template with double type and the variables as arguments
+        write_chunck_binFile<double>( filename, data, size, chunk_size ) ;
+
+        // print a message to the console
+        std::cout << "The data has been written to the file in chunks of size " << chunk_size << std::endl ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
