@@ -611,9 +611,7 @@ void reset_position_txtFile( std::ifstream &file )
     {
         std::cerr << "Error: Could not open file.\n" ;
     }
-
-    file.close() ;
-
+    
 }
 
 /*******************************************************************************************/

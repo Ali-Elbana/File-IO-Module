@@ -30,8 +30,8 @@
 #define WT_CHUNCK_FILEBIN   STOP
 #define RD_CHUNCK_FILEBIN   STOP
 #define GET_FILETXT_POS     STOP
-#define SEEK_FILETXT_POS    RUN
-
+#define SEEK_FILETXT_POS    STOP
+#define RST_FILETXT_POS     RUN
 
 
 /*******************************************************************************************/
@@ -799,6 +799,8 @@
             std::cerr << "Error: Could not open the file to get the current position.\n" ;
         }
         
+        file.close() ;
+
         return 0 ;
 
     }
@@ -808,6 +810,55 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RST_FILETXT_POS == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::ifstream file( filename ) ;
+
+        std::streampos pos {3} ;
+
+        seek_position_txtFile( file, pos ) ;
+
+        std::streampos currPosition = get_position_txtFile( file ) ;
+
+        if( currPosition != -1 ) 
+        {
+            std::cout << "Current position in file " << filename << ": " << currPosition << ".\n" ;
+        } 
+        else 
+        {
+            std::cerr << "Error: Could not open the file to get the current position.\n" ;
+        }
+
+        reset_position_txtFile( file ) ;
+
+        currPosition = get_position_txtFile( file ) ;
+
+        std::cout << "\nAfter reseting the position:\n" ;
+
+        if( currPosition != -1 ) 
+        {
+            std::cout << "Current position in file " << filename << ": " << currPosition << ".\n" ;
+        } 
+        else 
+        {
+            std::cerr << "Error: Could not open the file to get the current position.\n" ;
+        }
+
+        file.close() ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/

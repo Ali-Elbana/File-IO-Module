@@ -265,7 +265,7 @@ void seek_position_txtFile( std::ifstream &file, std::streampos position )  ;
 /*******************************************************************************************/
 
 // 26-Reset the position to the beginning of the file
-void reset_position_txtFile( const std::string &filename ) ;
+void reset_position_txtFile( std::ifstream &file ) ;
 
 /*******************************************************************************************/
 
