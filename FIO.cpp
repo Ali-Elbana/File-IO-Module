@@ -543,13 +543,64 @@ bool does_file_exist( const std::string &filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::streampos get_position_txtFile(const std::string &filename ) 
+{
 
+    std::ifstream file( filename ) ;
+
+    std::streampos currentPosition {-1} ;
+
+    if( file.is_open() == true ) 
+    {
+        // Get the current position in the file
+        currentPosition = file.tellg() ;
+    }
+    else
+    {
+        currentPosition = -1 ;
+
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+    }
+
+    file.close() ;
+
+    return currentPosition ;
+
+}
 
 
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void seek_position_txtFile(const std::string &filename, std::streampos position ) 
+{
 
+    std::ifstream file( filename ) ;
+
+    if( file.is_open() == true ) 
+    {
+
+        // Move the file pointer to the specified position
+        file.seekg( position, std::ios::beg ) ;
+
+        if( file.tellg() == position ) 
+        {
+            std::cout << "File pointer successfully moved to position: " << position << ".\n" ;
+        } 
+        else 
+        {
+            std::cerr << "Error: Could not move file pointer to position " << position << ".\n" ;
+        }
+
+    } 
+    else 
+    {
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+    }
+
+    file.close() ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

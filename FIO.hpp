@@ -254,12 +254,17 @@ void read_chunck_binFile( const std::string& filename, T* data, int size, int ch
 
 /*******************************************************************************************/
 
-// 24-Seek to a specific position in a txt file
+// 24-Get a specific position in a txt file
+std::streampos get_position_txtFile( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
+// 25-Seek to a specific position in a txt file
+void seek_position_txtFile( const std::string &filename, std::streampos position ) ;
 
 /*******************************************************************************************/
+
+// 26-Reset the postion to the beginning of the file
 
 
 /*******************************************************************************************/
