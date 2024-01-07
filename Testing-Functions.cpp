@@ -29,7 +29,9 @@
 #define RD_OBJ_FILEBIN      STOP
 #define WT_CHUNCK_FILEBIN   STOP
 #define RD_CHUNCK_FILEBIN   STOP
-#define GET_FILETXT_POS     RUN
+#define GET_FILETXT_POS     STOP
+#define SEEK_FILETXT_POS    RUN
+
 
 
 /*******************************************************************************************/
@@ -769,6 +771,37 @@
 
 /*******************************************************************************************/
 /*******************************************************************************************/
+
+#if SEEK_FILETXT_POS == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::streampos pos {3} ;
+
+        seek_position_txtFile( filename, pos ) ;
+
+        std::streampos currPosition = get_position_txtFile( filename ) ;
+
+        if( currPosition != -1 ) 
+        {
+            std::cout << "Current position in file " << filename << ": " << currPosition << ".\n" ;
+        } 
+        else 
+        {
+            std::cerr << "Error: Could not open the file to get the current position.\n" ;
+        }
+        
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
