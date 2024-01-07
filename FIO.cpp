@@ -543,10 +543,8 @@ bool does_file_exist( const std::string &filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
-std::streampos get_position_txtFile(const std::string &filename ) 
+std::streampos get_position_txtFile( std::ifstream &file ) 
 {
-
-    std::ifstream file( filename ) ;
 
     std::streampos currentPosition {-1} ;
 
@@ -559,10 +557,8 @@ std::streampos get_position_txtFile(const std::string &filename )
     {
         currentPosition = -1 ;
 
-        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+        std::cerr << "Error: Could not open file for reading.\n" ;
     }
-
-    file.close() ;
 
     return currentPosition ;
 
@@ -572,10 +568,8 @@ std::streampos get_position_txtFile(const std::string &filename )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
-void seek_position_txtFile(const std::string &filename, std::streampos position ) 
+void seek_position_txtFile( std::ifstream &file, std::streampos position ) 
 {
-
-    std::ifstream file( filename ) ;
 
     if( file.is_open() == true ) 
     {
@@ -595,17 +589,32 @@ void seek_position_txtFile(const std::string &filename, std::streampos position 
     } 
     else 
     {
-        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+        std::cerr << "Error: Could not open file for reading.\n" ;
     }
-
-    file.close() ;
 
 }
 
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void reset_position_txtFile( std::ifstream &file ) 
+{
 
+    if( file.is_open() == true ) 
+    {
+        // Reset the position to the beginning of the file
+        file.seekg( 0, std::ios::beg ) ;
+
+        std::cout << "Position reset to the beginning of file.\n" ;
+    } 
+    else 
+    {
+        std::cerr << "Error: Could not open file.\n" ;
+    }
+
+    file.close() ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

@@ -782,11 +782,13 @@
 
         std::string filename = "example.txt" ;
 
+        std::ifstream file( filename ) ;
+
         std::streampos pos {3} ;
 
-        seek_position_txtFile( filename, pos ) ;
+        seek_position_txtFile( file, pos ) ;
 
-        std::streampos currPosition = get_position_txtFile( filename ) ;
+        std::streampos currPosition = get_position_txtFile( file ) ;
 
         if( currPosition != -1 ) 
         {

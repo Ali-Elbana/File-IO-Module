@@ -222,7 +222,7 @@ void write_chunck_binFile( const std::string& filename, T *data, int size, int c
 
 // 23-Read data in chunks from bin file
 template <typename T>
-void read_chunck_binFile( const std::string& filename, T* data, int size, int chunk_size ) 
+void read_chunck_binFile( const std::string& filename, T *data, int size, int chunk_size ) 
 {
     // Declare an input file stream object with the binary flag
     std::ifstream file( filename, std::ios::binary | std::ios::in ) ; 
@@ -255,17 +255,17 @@ void read_chunck_binFile( const std::string& filename, T* data, int size, int ch
 /*******************************************************************************************/
 
 // 24-Get a specific position in a txt file
-std::streampos get_position_txtFile( const std::string &filename ) ;
+std::streampos get_position_txtFile( std::ifstream &file ) ;
 
 /*******************************************************************************************/
 
 // 25-Seek to a specific position in a txt file
-void seek_position_txtFile( const std::string &filename, std::streampos position ) ;
+void seek_position_txtFile( std::ifstream &file, std::streampos position )  ;
 
 /*******************************************************************************************/
 
-// 26-Reset the postion to the beginning of the file
-
+// 26-Reset the position to the beginning of the file
+void reset_position_txtFile( const std::string &filename ) ;
 
 /*******************************************************************************************/
 
@@ -293,8 +293,8 @@ void seek_position_txtFile( const std::string &filename, std::streampos position
 /* TO_DO: ✅
 
     Write these functions:
-    1-Seek to a specific position in a txt file.
-    2-Add/Delete a line/lines after a specific position in a txt file.
+    1-Seek to a specific position in a txt file.✅
+    2-Read/Write/Delete a line/lines after a specific position in a txt file.
     3-Search for a specific word or a line in a txt file.
     4-Delete a specific word or a line in a txt file.
     5-Replace a specific word or a line in a txt file.
