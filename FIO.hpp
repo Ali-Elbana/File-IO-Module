@@ -298,6 +298,7 @@ void seek_position_txtFile( const std::string &filename, std::streampos position
     3-Search for a specific word or a line in a txt file.
     4-Delete a specific word or a line in a txt file.
     5-Replace a specific word or a line in a txt file.
+    6-Lock/Unlock file.
 
 */
 
