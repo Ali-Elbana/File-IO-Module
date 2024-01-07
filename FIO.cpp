@@ -611,13 +611,41 @@ void reset_position_txtFile( std::ifstream &file )
     {
         std::cerr << "Error: Could not open file.\n" ;
     }
-    
+
 }
 
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::string readLine_atPosition_txtFile( const std::string &filename, std::streampos position ) 
+{
 
+    std::ifstream file( filename ) ;
+
+    std::string line ;
+
+    if( file.is_open() == true ) 
+    {
+        
+        // Use the seek_position_txtFile function to set the file position
+        seek_position_txtFile( file, position ) ;
+
+        std::getline( file, line ) ;
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << "\n" ;
+
+        line = "" ;  // Return an empty string to indicate an error
+    }
+
+    
+    file.close() ;
+
+    return line ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

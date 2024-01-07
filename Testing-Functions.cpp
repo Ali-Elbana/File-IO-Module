@@ -31,7 +31,9 @@
 #define RD_CHUNCK_FILEBIN   STOP
 #define GET_FILETXT_POS     STOP
 #define SEEK_FILETXT_POS    STOP
-#define RST_FILETXT_POS     RUN
+#define RST_FILETXT_POS     STOP
+#define RD_LINE_FILETXT_POS RUN
+
 
 
 /*******************************************************************************************/
@@ -863,6 +865,29 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RD_LINE_FILETXT_POS == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::ifstream file( filename ) ;
+
+        std::streampos pos {3} ;
+
+        std::cout<< "\nThe line is: " << readLine_atPosition_txtFile( filename, pos ) << '\n' ;
+
+        file.close() ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/

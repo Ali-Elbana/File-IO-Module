@@ -270,7 +270,7 @@ void reset_position_txtFile( std::ifstream &file ) ;
 /*******************************************************************************************/
 
 // 27-Read line after a specific position in a txt file
-
+std::string readLine_atPosition_txtFile( const std::string &filename, std::streampos position ) ;
 
 /*******************************************************************************************/
 
@@ -295,7 +295,8 @@ void reset_position_txtFile( std::ifstream &file ) ;
 /* TO_DO: ✅
 
     Write these functions:
-    1-Read/Write/Delete line/lines after a specific position in a txt file.
+    1-Read/Write/Delete line/lines at a specific position in a txt file.
+    1-Seek line at a specific position in a txt file.
     2-Search for a specific word or a line in a txt file.
     3-Delete a specific word or a line in a txt file.
     4-Replace a specific word or a line in a txt file.
