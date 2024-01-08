@@ -285,8 +285,8 @@ void deleteLine_atNumber_txtFile( const std::string &filename, int lineNumber ) 
 
 /*******************************************************************************************/
 
-
-
+// 27-Read lines at a specific position in a txt file
+std::string readLines_atPosition_txtFile( const std::string &filename, std::streampos position ) ;
 
 /*******************************************************************************************/
 

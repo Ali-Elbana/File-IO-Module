@@ -34,8 +34,8 @@
 #define RST_FILETXT_POS         STOP
 #define RD_LINE_FILETXT_POS     STOP
 #define WT_LINE_FILETXT_POS     STOP
-#define DEL_LINE_FILETXT_NUM    RUN
-
+#define DEL_LINE_FILETXT_NUM    STOP
+#define RD_LINES_FILETXT_POS    RUN
 
 
 
@@ -941,6 +941,25 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RD_LINES_FILETXT_POS == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::streampos pos {3} ;
+
+        std::cout<< "\nThe lines are: \n" << readLines_atPosition_txtFile( filename, pos ) << '\n' ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 
 /*******************************************************************************************/

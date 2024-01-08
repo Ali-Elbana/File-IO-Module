@@ -754,7 +754,38 @@ void deleteLine_atNumber_txtFile( const std::string &filename, int lineNumber )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::string readLines_atPosition_txtFile( const std::string &filename, std::streampos position ) 
+{
 
+    std::ifstream file( filename ) ;
+    std::string line ;
+    std::stringstream lines ;
+
+    if( file.is_open() == true ) 
+    {
+
+        // Use the seek_position_txtFile function to set the file position
+        file.seekg( position ) ;
+
+        // Read lines from the specified position until the end
+        while( std::getline(file, line) ) 
+        {
+            lines << line << '\n' ;
+        }
+
+    } 
+    else 
+    {
+        std::cerr << "Error: Could not open file " << filename << "\n" ;
+
+        lines.str() = "" ;
+    }
+
+    file.close() ;
+
+    return lines.str() ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
