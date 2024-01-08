@@ -274,8 +274,12 @@ std::string readLine_atPosition_txtFile( const std::string &filename, std::strea
 
 /*******************************************************************************************/
 
+// 28-Write line after a specific position in a txt file
+void writeLine_atPosition_txtFile(const std::string& filename, const std::string& newLine, 
+std::streampos position)  ;
 
 /*******************************************************************************************/
+
 
 
 /*******************************************************************************************/

@@ -650,6 +650,43 @@ std::string readLine_atPosition_txtFile( const std::string &filename, std::strea
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void writeLine_atPosition_txtFile(const std::string& filename, const std::string& newLine, 
+std::streampos position) 
+{
+
+    std::fstream file( filename, std::ios::in | std::ios::out ) ;
+
+    if( file.is_open() == true ) 
+    {
+        
+        // Move to the specified position
+        file.seekp( position ) ;
+
+        // Read the content after the position
+        std::stringstream contentAfterPosition ;
+
+        contentAfterPosition << file.rdbuf() ;
+
+        // Move back to the specified position
+        file.seekp( position ) ;
+
+        // Write the new line
+        file << newLine ;
+
+        // Write the content after the position
+        file << contentAfterPosition.str() ;
+
+        std::cout << "Line added successfully at position " << position << " in " << filename << ".\n" ;
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << ".\n" ;
+    }
+
+    file.close() ;
+
+}
 
 
 /*******************************************************************************************/

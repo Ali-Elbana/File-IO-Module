@@ -32,8 +32,8 @@
 #define GET_FILETXT_POS     STOP
 #define SEEK_FILETXT_POS    STOP
 #define RST_FILETXT_POS     STOP
-#define RD_LINE_FILETXT_POS RUN
-
+#define RD_LINE_FILETXT_POS STOP
+#define WT_LINE_FILETXT_POS RUN
 
 
 /*******************************************************************************************/
@@ -892,6 +892,29 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if WT_LINE_FILETXT_POS == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::ifstream file( filename ) ;
+
+        std::streampos pos {20} ;
+
+        writeLine_atPosition_txtFile( filename, "Enjoy using this module?", pos ) ;
+
+        file.close() ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
