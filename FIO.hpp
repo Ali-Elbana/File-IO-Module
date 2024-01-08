@@ -269,20 +269,23 @@ void reset_position_txtFile( std::ifstream &file ) ;
 
 /*******************************************************************************************/
 
-// 27-Read line after a specific position in a txt file
+// 27-Read a line at a specific position in a txt file
 std::string readLine_atPosition_txtFile( const std::string &filename, std::streampos position ) ;
 
 /*******************************************************************************************/
 
-// 28-Write line after a specific position in a txt file
-void writeLine_atPosition_txtFile(const std::string& filename, const std::string& newLine, 
-std::streampos position)  ;
+// 28-Write a line at a specific position in a txt file
+void writeLine_atPosition_txtFile( const std::string& filename, const std::string& newLine, 
+std::streampos position )  ;
+
+/*******************************************************************************************/
+
+// 29-Delete a line at a specific line in a txt file
+void deleteLine_atNumber_txtFile( const std::string &filename, int lineNumber ) ;
 
 /*******************************************************************************************/
 
 
-
-/*******************************************************************************************/
 
 
 /*******************************************************************************************/
