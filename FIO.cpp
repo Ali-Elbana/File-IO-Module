@@ -1027,7 +1027,42 @@ void writeLine_atNumber_txtFile( const std::string &filename, const std::string 
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::vector<std::string> readLines_atNumber_txtFile( const std::string& filename, int startLineNumber ) 
+{
+    std::ifstream file( filename ) ;
 
+    std::vector<std::string> lines ;
+
+    if( file.is_open() == true) 
+    {
+
+        std::string line {""} ;
+
+        int currentLineNumber  {1} ;
+
+        // Read and discard lines until the specified startLineNumber
+        while( (currentLineNumber < startLineNumber) && std::getline(file, line) ) 
+        {
+            currentLineNumber++ ;
+        }
+
+        // Read lines from startLineNumber to the end and store in the vector
+        while( std::getline(file, line) ) 
+        {
+            lines.push_back( line ) ;
+        }
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << "\n" ;
+    }
+
+    file.close() ;
+
+    return lines ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

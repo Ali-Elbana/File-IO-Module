@@ -312,7 +312,7 @@ void writeLine_atNumber_txtFile( const std::string &filename, const std::string 
 /*******************************************************************************************/
 
 // 35-Read lines at a specific number in a txt file
-
+std::vector<std::string> readLines_atNumber_txtFile( const std::string& filename, int startLineNumber ) ;
 
 /*******************************************************************************************/
 

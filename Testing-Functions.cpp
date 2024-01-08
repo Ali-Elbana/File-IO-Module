@@ -39,7 +39,8 @@
 #define WT_LINES_FILETXT_POS    STOP
 #define DEL_LINES_FILETXT_NUM   STOP
 #define RD_LINE_FILETXT_NUM     STOP
-#define WT_LINES_FILETXT_NUM    RUN
+#define WT_LINES_FILETXT_NUM    STOP
+#define RD_LINES_FILETXT_NUM    RUN
 
 
 
@@ -1063,7 +1064,32 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RD_LINES_FILETXT_NUM == RUN
 
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::vector<std::string> lines ;
+
+        int lineNum {6} ;
+
+        lines = readLines_atNumber_txtFile( filename, lineNum ) ;
+
+        for( const auto &line : lines ) 
+        {
+            std::cout<< line << '\n' ;
+        }
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
