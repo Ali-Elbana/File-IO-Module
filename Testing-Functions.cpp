@@ -37,7 +37,11 @@
 #define DEL_LINE_FILETXT_NUM    STOP
 #define RD_LINES_FILETXT_POS    STOP
 #define WT_LINES_FILETXT_POS    STOP
-#define DEL_LINES_FILETXT_NUM   RUN
+#define DEL_LINES_FILETXT_NUM   STOP
+#define RD_LINE_FILETXT_NUM     RUN
+
+
+
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -1013,7 +1017,25 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if RD_LINE_FILETXT_NUM == RUN
 
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        int lineNum {2} ;
+
+        std::cout<< "\nThe line is: " << readLine_atNumber_txtFile( filename, lineNum ) << '\n' ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/

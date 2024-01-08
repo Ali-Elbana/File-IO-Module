@@ -915,7 +915,50 @@ void deleteLines_atNumber_txtFile( const std::string &filename, int lineNumber )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+std::string readLine_atNumber_txtFile( const std::string &filename, int lineNumber ) 
+{
 
+    std::ifstream file( filename ) ;
+
+    std::string line {""} ;
+
+    if( file.is_open() == true) 
+    {
+
+        int currentLineNumber {0} ;
+
+        // Read lines until the desired line number is reached
+        while( (currentLineNumber < lineNumber) && std::getline(file, line) ) 
+        {
+            currentLineNumber++ ;
+        }
+
+        file.close() ;
+
+        // Check if the desired line number was found
+        if( currentLineNumber != lineNumber ) 
+        {
+            std::cerr << "Error: Line number " << lineNumber << " not found in file.\n" ;
+
+            line = "" ;
+        } 
+        else 
+        {
+           // Do nothing
+        }
+
+    } 
+    else 
+    {
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+
+        line = "" ;
+
+    }
+
+    return line ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

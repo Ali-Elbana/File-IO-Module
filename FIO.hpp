@@ -301,9 +301,26 @@ void deleteLines_atNumber_txtFile( const std::string &filename, int lineNumber )
 
 /*******************************************************************************************/
 
+// 33-Read a line at a specific number in a txt file
+std::string readLine_atNumber_txtFile( const std::string &filename, int lineNumber ) ;
+
+/*******************************************************************************************/
+
+// 34-Write a line at a specific number in a txt file
 
 
 /*******************************************************************************************/
+
+// 35-Read lines at a specific number in a txt file
+
+
+/*******************************************************************************************/
+
+// 36-Write lines at a specific number in a txt file
+
+
+/*******************************************************************************************/
+
 
 /* TO_DO: ✅
 
