@@ -307,7 +307,7 @@ std::string readLine_atNumber_txtFile( const std::string &filename, int lineNumb
 /*******************************************************************************************/
 
 // 34-Write a line at a specific number in a txt file
-
+void writeLine_atNumber_txtFile( const std::string &filename, const std::string &lineContent, int lineNumber ) ;
 
 /*******************************************************************************************/
 
@@ -325,7 +325,7 @@ std::string readLine_atNumber_txtFile( const std::string &filename, int lineNumb
 /* TO_DO: ✅
 
     Write these functions:
-    1-Read/Write line/lines at a number in a txt file.
+    1-Read/Write lines at a number in a txt file.
 
     1-Search for a specific word or a line in a txt file.
     2-Delete a specific word or a line in a txt file.

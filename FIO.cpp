@@ -963,7 +963,66 @@ std::string readLine_atNumber_txtFile( const std::string &filename, int lineNumb
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void writeLine_atNumber_txtFile( const std::string &filename, const std::string &lineContent, int lineNumber ) 
+{
 
+    // Open the source file.
+    std::ifstream fin( filename ) ; 
+
+    // Create a temporary file.
+    std::ofstream temp( "temp.txt" ) ; 
+
+    // Store each line.
+    std::string line {""} ;
+
+    // Keep track of the line number.
+    int line_count {0} ; 
+
+    if( fin.is_open() == true ) 
+    {
+
+        // Read each line.
+        while( getline(fin, line) ) 
+        { 
+
+            // If the line to write.
+            if( line_count == (lineNumber - 1) ) 
+            { 
+                // Write the new line to the temporary file.
+                temp << lineContent << "\n" ; 
+            }
+            else
+            {
+                // Write the original line to the temporary file.
+                temp << line << "\n" ; 
+            }
+
+            // Increment the line number.
+            line_count++ ; 
+
+        }
+
+        std::cout << "Line written successfully at line number " << lineNumber << " in " << filename << ".\n" ;
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << ".\n" ;
+    }
+
+    // Close the source file.
+    fin.close() ; 
+
+    // Close the temporary file.
+    temp.close() ; 
+
+    // Delete the source file.
+    remove( filename.c_str() ) ; 
+
+    // Rename the temporary file.
+    rename( "temp.txt", filename.c_str() ) ; 
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
