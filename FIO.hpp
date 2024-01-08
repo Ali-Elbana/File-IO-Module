@@ -280,7 +280,7 @@ std::streampos position )  ;
 
 /*******************************************************************************************/
 
-// 29-Delete a line at a specific line in a txt file
+// 29-Delete a line at a specific number in a txt file
 void deleteLine_atNumber_txtFile( const std::string &filename, int lineNumber ) ;
 
 /*******************************************************************************************/
@@ -296,8 +296,11 @@ std::streampos position ) ;
 
 /*******************************************************************************************/
 
+// 32-Delete lines at a specific number in a txt file
+void deleteLines_atNumber_txtFile( const std::string &filename, int lineNumber ) ;
 
 /*******************************************************************************************/
+
 
 
 /*******************************************************************************************/
@@ -305,8 +308,7 @@ std::streampos position ) ;
 /* TO_DO: ✅
 
     Write these functions:
-    1-Write/Delete lines at a specific position in a txt file.
-    1-Seek line at a number in a txt file.
+    1-Read/Write line/lines at a number in a txt file.
 
     1-Search for a specific word or a line in a txt file.
     2-Delete a specific word or a line in a txt file.

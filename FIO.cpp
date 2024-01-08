@@ -852,7 +852,65 @@ std::streampos position )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void deleteLines_atNumber_txtFile( const std::string &filename, int lineNumber ) 
+{
+    
+    // open the source file
+    std::ifstream fin( filename ) ; 
 
+    // create a temporary file
+    std::ofstream temp( "temp.txt" ) ; 
+
+    // store each line
+    std::string line {""} ;
+
+    // keep track of the line number
+    int lineCount {0} ; 
+
+    if( fin.is_open() == true ) 
+    {
+
+        // read each line
+        while( getline(fin, line) ) 
+        { 
+
+            // if not the line to delete
+            if( lineCount < (lineNumber - 1) ) 
+            { 
+                // write to the temporary file
+                temp << line << "\n" ; 
+            }
+            else
+            {
+                // Skip it
+            }
+
+            // increment the line number
+            lineCount++ ; 
+
+        }
+
+        std::cout << "Line deleted successfully at line number " << lineNumber << " in " << filename << ".\n" ;
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << ".\n" ;
+    }
+
+    // close the source file
+    fin.close() ; 
+
+    // close the temporary file
+    temp.close() ; 
+
+    // delete the source file
+    remove( filename.c_str() ) ; 
+
+    // rename the temporary file
+    rename( "temp.txt", filename.c_str() ) ; 
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
