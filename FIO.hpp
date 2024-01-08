@@ -317,7 +317,8 @@ std::vector<std::string> readLines_atNumber_txtFile( const std::string& filename
 /*******************************************************************************************/
 
 // 36-Write lines at a specific number in a txt file
-
+void writeLines_atNumber_txtFile( const std::string &filename, const std::vector<std::string> &lines, 
+int lineNumber ) ;
 
 /*******************************************************************************************/
 
@@ -325,12 +326,11 @@ std::vector<std::string> readLines_atNumber_txtFile( const std::string& filename
 /* TO_DO: ✅
 
     Write these functions:
-    1-Read/Write lines at a number in a txt file.
-
-    1-Search for a specific word or a line in a txt file.
-    2-Delete a specific word or a line in a txt file.
-    3-Replace a specific word or a line in a txt file.
-    4-Lock/Unlock file.
+    1-Append line/lines at a number in a txt file.(2)
+    2-Search for a specific word in a txt file.(2)
+    3-Delete a specific word in a txt file.
+    4-Replace a specific word in a txt file.
+    5-Lock/Unlock file.(2)
 
 */
 

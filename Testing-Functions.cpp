@@ -39,8 +39,10 @@
 #define WT_LINES_FILETXT_POS    STOP
 #define DEL_LINES_FILETXT_NUM   STOP
 #define RD_LINE_FILETXT_NUM     STOP
-#define WT_LINES_FILETXT_NUM    STOP
-#define RD_LINES_FILETXT_NUM    RUN
+#define WT_LINE_FILETXT_NUM    STOP
+#define RD_LINES_FILETXT_NUM    STOP
+#define WT_LINES_FILETXT_NUM    RUN
+
 
 
 
@@ -980,7 +982,7 @@
 
         std::string filename = "example.txt" ;
 
-         std::vector<std::string> newLines {"Line 1", "Line 2", "Line 3"} ;
+        std::vector<std::string> newLines {"Line 1", "Line 2", "Line 3"} ;
 
         std::streampos pos {20} ;
 
@@ -1041,7 +1043,7 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
-#if WT_LINES_FILETXT_NUM == RUN
+#if WT_LINE_FILETXT_NUM == RUN
 
     int main( void ) 
     {
@@ -1094,7 +1096,27 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if WT_LINES_FILETXT_NUM == RUN
 
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::vector<std::string> newLines {"Line 5", "Line 6", "Line 7"} ;
+
+        int lineNum {6} ;
+
+        writeLines_atNumber_txtFile( filename, newLines, lineNum ) ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
