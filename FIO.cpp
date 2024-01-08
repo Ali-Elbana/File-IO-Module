@@ -790,7 +790,64 @@ std::string readLines_atPosition_txtFile( const std::string &filename, std::stre
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void writeLines_atPosition_txtFile( const std::string &filename, const std::vector<std::string> &newLines, 
+std::streampos position ) 
+{
+    
+    std::fstream file(filename, std::ios::in | std::ios::out) ;
 
+    if( file.is_open() == true ) 
+    {
+
+        // Move to the specified position
+        file.seekp( position ) ;
+
+        // Read the content after the position
+        std::stringstream contentAfterPosition ;
+
+        contentAfterPosition << file.rdbuf() ;
+
+        // Move back to the specified position
+        file.seekp( position ) ;
+
+        // Write the new lines
+        auto it = newLines.begin() ;
+
+        const auto last = newLines.end() ;
+
+        while( it != last ) 
+        {
+
+            file << *it ;
+
+            it++ ;
+
+            // Add a newline character only if it's not the last iteration
+            if( it != last ) 
+            {
+                file << '\n' ;
+            }
+            else
+            {
+                // Do nothing
+            }
+
+        }
+
+        // Write the content after the position
+        file << contentAfterPosition.str() ;
+
+        std::cout << "Lines added successfully at position " << position << " in " << filename << ".\n" ;
+
+    } 
+    else 
+    {
+        std::cerr << "Error: Could not open file " << filename << ".\n" ;
+    }
+
+    file.close() ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

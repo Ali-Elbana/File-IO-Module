@@ -285,11 +285,14 @@ void deleteLine_atNumber_txtFile( const std::string &filename, int lineNumber ) 
 
 /*******************************************************************************************/
 
-// 27-Read lines at a specific position in a txt file
+// 30-Read lines at a specific position in a txt file
 std::string readLines_atPosition_txtFile( const std::string &filename, std::streampos position ) ;
 
 /*******************************************************************************************/
 
+// 31-Write lines at a specific position in a txt file
+void writeLines_atPosition_txtFile( const std::string &filename, const std::vector<std::string> &newLines, 
+std::streampos position ) ;
 
 /*******************************************************************************************/
 
@@ -302,12 +305,13 @@ std::string readLines_atPosition_txtFile( const std::string &filename, std::stre
 /* TO_DO: ✅
 
     Write these functions:
-    1-Read/Write/Delete line/lines at a specific position in a txt file.
-    1-Seek line at a specific position in a txt file.
-    2-Search for a specific word or a line in a txt file.
-    3-Delete a specific word or a line in a txt file.
-    4-Replace a specific word or a line in a txt file.
-    5-Lock/Unlock file.
+    1-Write/Delete lines at a specific position in a txt file.
+    1-Seek line at a number in a txt file.
+
+    1-Search for a specific word or a line in a txt file.
+    2-Delete a specific word or a line in a txt file.
+    3-Replace a specific word or a line in a txt file.
+    4-Lock/Unlock file.
 
 */
 

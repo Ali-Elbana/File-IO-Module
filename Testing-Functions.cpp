@@ -35,8 +35,8 @@
 #define RD_LINE_FILETXT_POS     STOP
 #define WT_LINE_FILETXT_POS     STOP
 #define DEL_LINE_FILETXT_NUM    STOP
-#define RD_LINES_FILETXT_POS    RUN
-
+#define RD_LINES_FILETXT_POS    STOP
+#define WT_LINES_FILETXT_POS    RUN
 
 
 /*******************************************************************************************/
@@ -965,7 +965,27 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if WT_LINES_FILETXT_POS == RUN
 
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+         std::vector<std::string> newLines {"Line 1", "Line 2", "Line 3"} ;
+
+        std::streampos pos {20} ;
+
+        writeLines_atPosition_txtFile( filename, newLines, pos ) ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
