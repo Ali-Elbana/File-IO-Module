@@ -43,8 +43,8 @@
 #define RD_LINES_FILETXT_NUM    STOP
 #define WT_LINES_FILETXT_NUM    STOP
 #define AD_LINE_FILETXT_NUM     STOP
-#define AD_LINES_FILETXT_NUM    RUN
-
+#define AD_LINES_FILETXT_NUM    STOP
+#define FD_WORD_FILETXT_NUM     RUN
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -1169,6 +1169,34 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if FD_WORD_FILETXT_NUM == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::string targetWord = "1" ; 
+
+        int lineFound = findWord_txtFile( filename, targetWord ) ;
+
+        if( lineFound != -2 ) 
+        {
+            std::cout << "The word '" << targetWord << "' was found on line " << lineFound << ".\n" ;
+        } 
+        else 
+        {
+            std::cout << "The word '" << targetWord << "' was not found in the file.\n" ;
+        }
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/

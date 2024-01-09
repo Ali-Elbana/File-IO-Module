@@ -334,7 +334,8 @@ int lineNumber )  ;
 
 /*******************************************************************************************/
 
-
+// 39-Search for a specific word in a txt file and return the first line number where it occurs
+int findWord_txtFile( const std::string &filename, const std::string &targetWord ) ;
 
 /*******************************************************************************************/
 
@@ -351,11 +352,10 @@ int lineNumber )  ;
 /* TO_DO: ✅
 
     Write these functions:
-    1-Append line/lines at a number in a txt file.(2)
-    2-Search for a specific word in a txt file.
-    3-Delete a specific word in a txt file.
-    4-Replace a specific word in a txt file.
-    5-Lock/Unlock file.(2)
+    1-Search for a specific word in a txt file.
+    2-Delete a specific word in a txt file.
+    3-Replace a specific word in a txt file.
+    4-Lock/Unlock file.(2)
 
 */
 

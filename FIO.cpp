@@ -1259,7 +1259,70 @@ int lineNumber )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+int findWord_txtFile( const std::string &filename, const std::string &targetWord ) 
+{
 
+    std::ifstream file( filename ) ;
+
+    int lineNumber {-1} ;
+
+    bool isFound {false} ;
+
+    if( file.is_open() == true ) 
+    {
+        
+        std::string line ;
+
+        lineNumber = 1 ;
+
+        while( std::getline(file, line) ) 
+        {
+
+            size_t found = line.find( targetWord ) ;
+
+            if( found != std::string::npos ) 
+            {
+                // Word found in the current line
+                file.close() ;
+
+                isFound = true ;
+
+                break ;
+
+            }
+            else
+            {
+                lineNumber++ ;
+            }
+
+        }
+        
+    }
+    else
+    {
+
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+
+        // Return -1 to indicate an error
+        lineNumber = -1 ;  
+
+    }
+
+    file.close() ;
+
+    if( isFound != true )
+    {
+        // Return -2 if the word is not found in the file
+        lineNumber = -2 ;
+    }
+    else
+    {
+        // Do nothing
+    }
+
+    return lineNumber ;  
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
