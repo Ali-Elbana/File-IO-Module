@@ -1136,7 +1136,64 @@ int lineNumber )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void appendLine_atNumber_txtFile( const std::string &filename, const std::string &lineToAdd, int lineNumber ) 
+{
 
+    std::ifstream inputFile( filename ) ;
+
+    std::vector<std::string> lines ;
+
+    std::string line ;
+
+    if( inputFile.is_open() == true ) 
+    {
+        
+        // Read existing content line by line
+        while( std::getline(inputFile, line) ) 
+        {
+            lines.push_back(line) ;
+        }
+
+        inputFile.close() ; 
+
+        // Insert the new line at the specified position
+        if( lineNumber >= 1 && lineNumber <= static_cast<int>(lines.size()) + 1 ) 
+        {
+            lines.insert( lines.begin() + lineNumber - 1, lineToAdd ) ;
+        } 
+        else 
+        {
+            std::cerr << "Error: Invalid line number.\n" ;
+        }
+
+        // Write the updated content back to the file
+        std::ofstream outputFile( filename ) ;
+
+        if( outputFile.is_open() == true ) 
+        {
+
+            for( const auto &updatedLine : lines ) 
+            {
+                outputFile << updatedLine << '\n' ;
+            }
+
+            std::cout << "Line added successfully at position " << lineNumber << ".\n" ;
+
+            outputFile.close() ;
+
+        }
+        else
+        {
+            std::cerr << "Error: Could not open file " << filename << " for writing.\n" ;
+        }
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+    }
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

@@ -322,12 +322,34 @@ int lineNumber ) ;
 
 /*******************************************************************************************/
 
+// 37-Append a line at a specific number in a txt file
+void appendLine_atNumber_txtFile( const std::string &filename, const std::string &lineToAdd, 
+int lineNumber ) ;
+
+/*******************************************************************************************/
+
+// 38-Append lines at a specific number in a txt file
+
+/*******************************************************************************************/
+
+
+/*******************************************************************************************/
+
+
+/*******************************************************************************************/
+
+
+/*******************************************************************************************/
+
+
+/*******************************************************************************************/
+
 
 /* TO_DO: ✅
 
     Write these functions:
     1-Append line/lines at a number in a txt file.(2)
-    2-Search for a specific word in a txt file.(2)
+    2-Search for a specific word in a txt file.
     3-Delete a specific word in a txt file.
     4-Replace a specific word in a txt file.
     5-Lock/Unlock file.(2)

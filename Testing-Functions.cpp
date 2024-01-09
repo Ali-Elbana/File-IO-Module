@@ -39,10 +39,10 @@
 #define WT_LINES_FILETXT_POS    STOP
 #define DEL_LINES_FILETXT_NUM   STOP
 #define RD_LINE_FILETXT_NUM     STOP
-#define WT_LINE_FILETXT_NUM    STOP
+#define WT_LINE_FILETXT_NUM     STOP
 #define RD_LINES_FILETXT_NUM    STOP
-#define WT_LINES_FILETXT_NUM    RUN
-
+#define WT_LINES_FILETXT_NUM    STOP
+#define AD_LINE_FILETXT_NUM     RUN
 
 
 
@@ -1121,6 +1121,25 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if AD_LINE_FILETXT_NUM == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        int lineNum {9} ;
+
+        appendLine_atNumber_txtFile( filename, "Line 8", lineNum ) ;
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
