@@ -329,8 +329,11 @@ int lineNumber ) ;
 /*******************************************************************************************/
 
 // 38-Append lines at a specific number in a txt file
+void appendLines_atNumber_txtFile( const std::string &filename, const std::vector<std::string> &linesToAdd, 
+int lineNumber )  ;
 
 /*******************************************************************************************/
+
 
 
 /*******************************************************************************************/

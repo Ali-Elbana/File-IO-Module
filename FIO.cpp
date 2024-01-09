@@ -1136,7 +1136,8 @@ int lineNumber )
 /*******************************************************************************************/
 /*******************************************************************************************/
 
-void appendLine_atNumber_txtFile( const std::string &filename, const std::string &lineToAdd, int lineNumber ) 
+void appendLine_atNumber_txtFile( const std::string &filename, const std::string &lineToAdd, 
+int lineNumber ) 
 {
 
     std::ifstream inputFile( filename ) ;
@@ -1198,7 +1199,62 @@ void appendLine_atNumber_txtFile( const std::string &filename, const std::string
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+void appendLines_atNumber_txtFile( const std::string &filename, const std::vector<std::string> &linesToAdd, 
+int lineNumber )  
+{
+    std::ifstream inputFile( filename ) ;
 
+    std::vector<std::string> existingLines ;
+
+    std::string line ;
+
+    if( inputFile.is_open() == true ) 
+    {
+        
+        // Read existing content line by line
+        while( std::getline(inputFile, line) ) 
+        {
+            existingLines.push_back(line) ;
+        }
+
+        inputFile.close();
+
+        // Insert the new lines at the specified position
+        if( lineNumber >= 1 && lineNumber <= static_cast<int>(existingLines.size()) + 1 ) 
+        {
+            existingLines.insert( existingLines.begin() + lineNumber - 1, linesToAdd.begin(), linesToAdd.end() ) ;
+        } 
+        else 
+        {
+            std::cerr << "Error: Invalid line number.\n" ;
+        }
+
+        // Write the updated content back to the file
+        std::ofstream outputFile( filename ) ;
+
+        if( outputFile.is_open() == true ) 
+        {
+            for( const auto &updatedLine : existingLines ) 
+            {
+                outputFile << updatedLine << '\n' ;
+            }
+
+            std::cout << "Lines added successfully at position " << lineNumber << ".\n" ;
+
+            outputFile.close() ;
+        }
+        else
+        {
+            std::cerr << "Error: Could not open file " << filename << " for writing.\n" ;
+        }
+
+    }
+    else
+    {
+        std::cerr << "Error: Could not open file " << filename << " for reading.\n" ;
+    }
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
