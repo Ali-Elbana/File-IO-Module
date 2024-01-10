@@ -67,50 +67,6 @@ Empower your C++ projects with the File I/O Module. Whether you're building a sm
 
 ## Mind map for the notes:
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Markmap</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-#mindmap {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.6/dist/style.css">
-</head>
-<body>
-<svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.6/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.6/dist/index.js"></script><script>(r => {
-                setTimeout(r);
-              })(() => {
-  const {
-    markmap,
-    mm
-  } = window;
-  const {
-    el
-  } = markmap.Toolbar.create(mm);
-  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
-  document.body.append(el);
-})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
-                const markmap = getMarkmap();
-                window.mm = markmap.Markmap.create(
-                  "svg#mindmap",
-                  (getOptions || markmap.deriveOptions)(jsonOptions),
-                  root2
-                );
-              })(() => window.markmap,null,{"type":"heading","depth":0,"payload":{"lines":[0,1]},"content":"FIO Module Functions","children":[{"type":"heading","depth":1,"payload":{"lines":[3,4]},"content":"File creation and deletion","children":[{"type":"heading","depth":2,"payload":{"lines":[4,5]},"content":"Function to create a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[5,6]},"content":"Function to create a bin file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[6,7]},"content":"Function to delete any file","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[9,10]},"content":"File renaming and status","children":[{"type":"heading","depth":2,"payload":{"lines":[10,11]},"content":"Function to rename any file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[11,12]},"content":"Check file status","children":[]},{"type":"heading","depth":2,"payload":{"lines":[12,13]},"content":"Check if a file exists","children":[]},{"type":"heading","depth":2,"payload":{"lines":[13,14]},"content":"Count the number of lines in a file","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[16,17]},"content":"File opening and closing","children":[{"type":"heading","depth":2,"payload":{"lines":[17,18]},"content":"Function to open txt file in read mode","children":[]},{"type":"heading","depth":2,"payload":{"lines":[18,19]},"content":"Function to open txt file in write mode","children":[]},{"type":"heading","depth":2,"payload":{"lines":[19,20]},"content":"Function to open bin file in read mode","children":[]},{"type":"heading","depth":2,"payload":{"lines":[20,21]},"content":"Function to open bin file in write mode","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[23,24]},"content":"File reading and writing","children":[{"type":"heading","depth":2,"payload":{"lines":[24,25]},"content":"Function to clear the content of any type of files","children":[]},{"type":"heading","depth":2,"payload":{"lines":[25,26]},"content":"Read the first line of a text file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[26,27]},"content":"Read the last line of a text file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[27,28]},"content":"Read the entire txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[28,29]},"content":"Write on a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[29,30]},"content":"Append on a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[30,31]},"content":"Copy the content of one txt file to another txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[31,32]},"content":"Write any data in binary mode","children":[]},{"type":"heading","depth":2,"payload":{"lines":[32,33]},"content":"Append any data in binary mode","children":[]},{"type":"heading","depth":2,"payload":{"lines":[33,34]},"content":"Read any data from a bin file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[34,35]},"content":"Write data in chunks in bin file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[35,36]},"content":"Read data in chunks from bin file","children":[]}]},{"type":"heading","depth":1,"payload":{"lines":[38,39]},"content":"File positioning and manipulation","children":[{"type":"heading","depth":2,"payload":{"lines":[39,40]},"content":"Get a specific position in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[40,41]},"content":"Seek to a specific position in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[41,42]},"content":"Reset the position to the beginning of the file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[42,43]},"content":"Read a line at a specific position in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[43,44]},"content":"Write a line at a specific position in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[44,45]},"content":"Delete a line at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[45,46]},"content":"Read lines at a specific position in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[46,47]},"content":"Write lines at a specific position in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[47,48]},"content":"Delete lines at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[48,49]},"content":"Read a line at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[49,50]},"content":"Write a line at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[50,51]},"content":"Read lines at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[51,52]},"content":"Write lines at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[52,53]},"content":"Append a line at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[53,54]},"content":"Append lines at a specific number in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[54,55]},"content":"Search for a specific word in a txt file and return the first line number where it occurs","children":[]},{"type":"heading","depth":2,"payload":{"lines":[55,56]},"content":"Delete a specific word in a txt file","children":[]},{"type":"heading","depth":2,"payload":{"lines":[56,57]},"content":"Replace a specific word in a txt file","children":[]}]}]},{})</script>
-</body>
-</html>
 
 
 ---
