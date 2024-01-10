@@ -1327,12 +1327,147 @@ int findWord_txtFile( const std::string &filename, const std::string &targetWord
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+bool deleteWord_txtFile ( const std::string &fileName, const std::string &word ) 
+{
 
+    int lineNumber = findWord_txtFile( fileName, word ) ; // call the function to find the line number
+
+    bool isSucceed {true} ;
+
+    if( lineNumber > 0 ) // check if the word is found in the file
+    {
+
+        std::ifstream fileInput ; // create an input file stream
+        fileInput.open ( fileName ) ; // open the file
+        std::ofstream fileOutput ; // create an output file stream
+        fileOutput.open ( "temp.txt" ) ; // open a temporary file
+
+        // check if both files are opened successfully
+        if( fileInput.is_open() == true && fileOutput.is_open() == true ) 
+        {
+
+            std::string line ; // a variable to store each line of the file
+            int currentLine = 0 ; // a variable to keep track of the current line number
+
+            while( std::getline(fileInput, line) ) // read each line of the file
+            {
+
+                currentLine++ ; // increment the current line number
+
+                if( currentLine == lineNumber ) // check if the current line contains the word to delete
+                {
+
+                    size_t pos = line.find ( word ) ; // find the position of the word in the line
+                    line.erase ( pos, word.length() ) ; // erase the word from the line
+
+                }
+                else
+                {
+                    // Do nothing
+                }
+
+                fileOutput << line << "\n" ; // write the line to the temporary file
+
+            }
+
+            fileInput.close() ; // close the input file
+            fileOutput.close() ; // close the output file
+
+            remove ( fileName.c_str() ) ; // delete the original file
+            rename ( "temp.txt", fileName.c_str() ) ; // rename the temporary file to the original file name
+
+            isSucceed = true ; // return true to indicate success
+
+        }
+        else
+        {
+
+            std::cerr << "Error: Could not open files for reading and writing.\n" ; // print an error message
+            isSucceed =  false ; // return false to indicate failure
+
+        }
+
+    }
+    else
+    {
+        isSucceed =  false ; // return false if the word is not found in the file
+    }
+
+    return isSucceed ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+bool replaceWord_txtFile ( const std::string &fileName, const std::string &word, const std::string &newWord ) 
+{
 
+    int lineNumber = findWord_txtFile ( fileName, word ) ; // call the function to find the line number
+
+    bool isSucceed {true} ;
+
+    if( lineNumber > 0 ) // check if the word is found in the file
+    {
+
+        std::ifstream fileInput ; // create an input file stream
+        fileInput.open ( fileName ) ; // open the file
+        std::ofstream fileOutput ; // create an output file stream
+        fileOutput.open ( "temp.txt" ) ; // open a temporary file
+
+        if( fileInput.is_open() == true && fileOutput.is_open() == true ) // check if both files are opened successfully
+        {
+
+            std::string line ; // a variable to store each line of the file
+            int currentLine = 0 ; // a variable to keep track of the current line number
+
+            while( std::getline(fileInput, line) ) // read each line of the file
+            {
+
+                currentLine++ ; // increment the current line number
+
+                if( currentLine == lineNumber ) // check if the current line contains the word to replace
+                {
+
+                    size_t pos = line.find ( word ) ; // find the position of the word in the line
+                    line.replace ( pos, word.length(), newWord ) ; // replace the word with the new word in the line
+
+                }
+                else
+                {
+                    // Do nothing
+                }
+
+                fileOutput << line << "\n" ; // write the line to the temporary file
+
+            }
+
+            fileInput.close() ; // close the input file
+            fileOutput.close() ; // close the output file
+            remove ( fileName.c_str() ) ; // delete the original file
+            rename ( "temp.txt", fileName.c_str() ) ; // rename the temporary file to the original file name
+
+            isSucceed = true ; // return true to indicate success
+
+        }
+        else
+        {
+
+            std::cerr << "Error: Could not open files for reading and writing.\n" ; // print an error message
+
+            isSucceed = false ; // return false to indicate failure
+
+        }
+
+    }
+    else
+    {
+        isSucceed = false ; // return false if the word is not found in the file
+    }
+
+    return isSucceed ;
+
+}
 
 /*******************************************************************************************/
 /*******************************************************************************************/

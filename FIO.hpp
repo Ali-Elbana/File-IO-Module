@@ -339,12 +339,18 @@ int findWord_txtFile( const std::string &filename, const std::string &targetWord
 
 /*******************************************************************************************/
 
+// 40-Delete a specific word in a txt file
+bool deleteWord_txtFile ( const std::string &fileName, const std::string &word ) ;
 
 /*******************************************************************************************/
 
+// 41-Replace a specific word in a txt file
+bool replaceWord_txtFile ( const std::string &fileName, const std::string &word, 
+const std::string &newWord ) ;
 
 /*******************************************************************************************/
 
+// 42-Lock file 
 
 /*******************************************************************************************/
 
@@ -352,10 +358,7 @@ int findWord_txtFile( const std::string &filename, const std::string &targetWord
 /* TO_DO: ✅
 
     Write these functions:
-    1-Search for a specific word in a txt file.
-    2-Delete a specific word in a txt file.
-    3-Replace a specific word in a txt file.
-    4-Lock/Unlock file.(2)
+    1-Lock/Unlock file.(2)
 
 */
 

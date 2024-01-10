@@ -44,7 +44,10 @@
 #define WT_LINES_FILETXT_NUM    STOP
 #define AD_LINE_FILETXT_NUM     STOP
 #define AD_LINES_FILETXT_NUM    STOP
-#define FD_WORD_FILETXT_NUM     RUN
+#define FD_WORD_FILETXT_NUM     STOP
+#define DEL_WORD_FILETXT        STOP
+#define REP_WORD_FILETXT        RUN
+
 
 /*******************************************************************************************/
 /*******************************************************************************************/
@@ -1201,9 +1204,68 @@
 /*******************************************************************************************/
 /*******************************************************************************************/
 
+#if DEL_WORD_FILETXT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::string targetWord = "Line 1" ; 
+
+        bool success = deleteWord_txtFile( filename, targetWord ) ;
+
+        if( success == true )
+        {
+            std::cout << "The word " << targetWord << " was deleted successfully from the file " << filename << ".\n" ; // print a success message
+        }
+        else 
+        {
+            std::cout << "The word " << targetWord << " was not found in the file " << filename << ".\n" ; // print a failure message
+        }
+
+        return 0 ;
+
+    }
+
+#endif
 
 /*******************************************************************************************/
 /*******************************************************************************************/
+
+#if REP_WORD_FILETXT == RUN
+
+    int main( void ) 
+    {
+
+        // Clear the terminal window
+        system( "cls" ) ;
+
+        std::string filename = "example.txt" ;
+
+        std::string word = "" ; 
+
+        std::string newWord = "Line 1" ;
+
+        bool result = replaceWord_txtFile( filename, word, newWord ) ;
+
+        if( result == true ) 
+        { 
+            std::cout << "The word " << word << " was replaced with " << newWord << " successfully in the file " << filename << ".\n" ; 
+        }
+        else 
+        {
+            std::cout << "The word " << word << " was not found in the file " << filename << ".\n" ;
+        }
+
+        return 0 ;
+
+    }
+
+#endif
 
 
 /*******************************************************************************************/
