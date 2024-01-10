@@ -67,7 +67,7 @@ Empower your C++ projects with the File I/O Module. Whether you're building a sm
 
 ## Mind map for the notes:
 
-![FIO-MindMap_auto_x2](https://github.com/Ali-Elbana/File-IO-Module/assets/97269796/bdbd4f18-8434-4690-9383-4eb2736dd4d0)
+![image](https://github.com/Ali-Elbana/File-IO-Module/assets/97269796/c23870e9-000e-427e-8dc4-3e8a8421d48d)
 
 ---
 
