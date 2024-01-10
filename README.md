@@ -52,7 +52,6 @@ Empower your C++ projects with the File I/O Module. Whether you're building a sm
 
 - [Mind map for the notes](#mind_map_for_the_notes)
 - [Installation and Usage](#installation-and-usage)
-- [Credits](#credits)
 - [Contribution Guidelines](#contribution_guidelines)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -73,13 +72,8 @@ You can clone the repository to your machine.
 ```BASH
 git clone https://github.com/Ali-Elbana/File-IO-Module.git
 ```
-2. 
-3. 
-
-## Credits:
-
-`The credits of  are going to:`
-
+2. Drag and drop the `FIO.cpp` and `FIO.hpp` file in your project wor directory.
+3. Finally write this line `#include "FIO.hpp"` in your application file.
 
 ## Contribution Guidelines:
 
