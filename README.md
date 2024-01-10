@@ -69,8 +69,6 @@ Empower your C++ projects with the File I/O Module. Whether you're building a sm
 
 ![image](https://github.com/Ali-Elbana/File-IO-Module/assets/97269796/a7b395cb-3cc0-426a-82e0-4b73df6110e9)
 
-`To get the full view of the Mind map and discover more:` file:///G:/File%20IO%20Module%20in%20C++/MindMapView.html
-
 ---
 
 ## Installation and Usage:
