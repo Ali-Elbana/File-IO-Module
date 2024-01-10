@@ -1245,8 +1245,8 @@
         system( "cls" ) ;
 
         std::string filename = "example.txt" ;
-
-        std::string word = "" ; 
+  
+        std::string word = "Line 2" ; 
 
         std::string newWord = "Line 1" ;
 

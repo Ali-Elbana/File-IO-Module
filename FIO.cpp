@@ -1444,6 +1444,7 @@ bool replaceWord_txtFile ( const std::string &fileName, const std::string &word,
 
             fileInput.close() ; // close the input file
             fileOutput.close() ; // close the output file
+            
             remove ( fileName.c_str() ) ; // delete the original file
             rename ( "temp.txt", fileName.c_str() ) ; // rename the temporary file to the original file name
 
