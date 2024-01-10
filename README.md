@@ -32,9 +32,13 @@
 
 Welcome to the File I/O Module, a dedicated module crafted to enhance your C++ file handling experience. As a programmer, dealing with file operations can be intricate and time-consuming. This module aims to alleviate those challenges by providing a set of functions that streamline common file tasks, allowing you to focus on your application's core logic.
 
+---
+
 ### Description:
 
 The File I/O Module is a comprehensive solution designed to simplify File I/O operations in C++. Whether you're a beginner or an experienced developer, this module offers a range of functions that abstract away the complexities of reading, writing, and manipulating files.
+
+---
 
 ### Key Features:
 
@@ -47,7 +51,9 @@ The File I/O Module is a comprehensive solution designed to simplify File I/O op
 Empower your C++ projects with the File I/O Module. Whether you're building a small utility or a complex application, this module is designed to make file handling more efficient and less daunting.
 
 ***Elevate your C++ File I/O experience - integrate the File I/O Module into your projects today!***
-  
+
+---
+
 ## Table of Contents:
 
 - [Mind map for the notes](#mind_map_for_the_notes)
@@ -57,11 +63,64 @@ Empower your C++ projects with the File I/O Module. Whether you're building a sm
 - [Contact Information](#contact-information)
 - [Acknowledgments](#acknowledgments)
 
+---
+
 ## Mind map for the notes:
 
+FIO Module Functions
+|
+|--- File creation and deletion
+|    |--- Function to create a txt file
+|    |--- Function to create a bin file
+|    |--- Function to delete any file
+|
+|--- File renaming and status
+|    |--- Function to rename any file
+|    |--- Check file status
+|    |--- Check if a file exists
+|    |--- Count the number of lines in a file
+|
+|--- File opening and closing
+|    |--- Function to open txt file in read mode
+|    |--- Function to open txt file in write mode
+|    |--- Function to open bin file in read mode
+|    |--- Function to open bin file in write mode
+|
+|--- File reading and writing
+|    |--- Function to clear the content of any type of files
+|    |--- Read the first line of a text file
+|    |--- Read the last line of a text file
+|    |--- Read the entire txt file 
+|    |--- Write on a txt file
+|    |--- Append on a txt file
+|    |--- Copy the content of one txt file to another txt file
+|    |--- Write any data in binary mode
+|    |--- Append any data in binary mode
+|    |--- Read any data from a bin file
+|    |--- Write data in chunks in bin file
+|    |--- Read data in chunks from bin file
+|
+|--- File positioning and manipulation
+     |--- Get a specific position in a txt file
+     |--- Seek to a specific position in a txt file
+     |--- Reset the position to the beginning of the file
+     |--- Read a line at a specific position in a txt file
+     |--- Write a line at a specific position in a txt file
+     |--- Delete a line at a specific number in a txt file
+     |--- Read lines at a specific position in a txt file
+     |--- Write lines at a specific position in a txt file
+     |--- Delete lines at a specific number in a txt file
+     |--- Read a line at a specific number in a txt file
+     |--- Write a line at a specific number in a txt file
+     |--- Read lines at a specific number in a txt file
+     |--- Write lines at a specific number in a txt file
+     |--- Append a line at a specific number in a txt file
+     |--- Append lines at a specific number in a txt file
+     |--- Search for a specific word in a txt file and return the first line number where it occurs
+     |--- Delete a specific word in a txt file
+     |--- Replace a specific word in a txt file
 
-
-`To get the full view of the Mind map and discover more:` 
+---
 
 ## Installation and Usage:
 
@@ -75,6 +134,8 @@ git clone https://github.com/Ali-Elbana/File-IO-Module.git
 2. Drag and drop the `FIO.cpp` and `FIO.hpp` file in your project wor directory.
 3. Finally write this line `#include "FIO.hpp"` in your application file.
 
+---
+
 ## Contribution Guidelines:
 
 Contributions to the File I/O Module are welcome! If you have any suggestions, improvements, or additional content to contribute, please follow these guidelines:
@@ -85,19 +146,25 @@ Contributions to the File I/O Module are welcome! If you have any suggestions, i
 4. Commit and push your changes to your forked repository(```git commit -am 'Add new feature'```, ```git push origin feature/improvement```).
 5. Submit a pull request detailing the changes you made.
 
+---
+
 ## License:
 
 This project is licensed under the GNU GPLv3 License. Feel free to use, modify, and distribute the File I/O Module, following the terms of the license.
+
+---
 
 ## Contact Information:
 
 If you have any questions, suggestions, or feedback regarding the File I/O Module, please feel free to contact me at **alitheboss922@gmail.com** with subject [File I/O Module].
 
+---
+
 ## Acknowledgments:
 
 I would like to express my gratitude to the contributors and supporters who would help in creating and improving the File I/O Module. Your contributions are greatly appreciated.
 
-
+---
 
 
 
